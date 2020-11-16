@@ -5,10 +5,9 @@ import { stub } from "../data/data";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 
-
-
 export default function OthersNotes(props) {
-  const user = stub.profile;
+  const users = stub.users.filter((item, id) => id>0);
+
 
   return (
     <Box>
@@ -24,16 +23,18 @@ export default function OthersNotes(props) {
       <Typography>
         {props.showOthersNotes ? (
           <Box>
-            {user.locations.map((obj, index) => {
+            {users.map((user, index) => {
               return (
-                <p>
-                  <Link
-                    key={index}
-                    onClick={() => props.setDefaultCenter(obj.coordinates)}
-                  >
-                    {index + 1}. {obj.note}
-                  </Link>
-                </p>
+                <div key={index}>
+                  <b>
+                    {user.firstName} {user.secondName}:
+                  </b>
+                  {user.locations.map((l, id) => (
+                    <p key={id}>
+                      {l.name}: {l.note}
+                    </p>
+                  ))}
+                </div>
               );
             })}
           </Box>

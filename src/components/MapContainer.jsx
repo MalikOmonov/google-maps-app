@@ -8,7 +8,7 @@ import {
 import { stub } from "../data/data";
 
 export default function MapContainer(props) {
-  const user = stub.profile;
+  const user = stub.users[0];
 
   const mapStyles = {
     height: "100vh",

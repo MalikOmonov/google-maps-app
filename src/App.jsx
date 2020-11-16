@@ -15,7 +15,7 @@ import NewNote from "./components/NewNote";
 - Add the note to the current list of my notes
 - Clickable point for my new location (with InfoWindow popup)
 
-- notes of other users {modify stub file}
+- notes of other users {modify stub filegit status}
 - BAKEND/ MOCKS
 - Search button
 */

@@ -1,5 +1,6 @@
 export const stub = {
-  profile: {
+  users: [
+  {
     uid: "1",
     firstName: "John",
     secondName: " Doe",
@@ -49,6 +50,60 @@ export const stub = {
       },
     ],
   },
+
+  {
+    uid: "2",
+    firstName: "Bruce",
+    secondName: " Lee",
+    email: "lee@gmail.com",
+
+    locations: [
+      {
+        name: "Location 6",
+        coordinates: {
+          lat: -28.470125,
+          lng: 153.021072,
+        },
+        note: "This is my 6th location",
+      },
+      {
+        name: "Location 7",
+        coordinates: {
+          lat: -35.940329572,
+          lng: 138.5249979,
+        },
+        note: "This is my 7th location",
+      },
+    ],
+  },
+  {
+    uid: "3",
+    firstName: "Chuck",
+    secondName: " Norris",
+    email: "chuck@gmail.com",
+
+    locations: [
+      {
+        name: "Location 8",
+        coordinates: {
+          lat: -28.470125,
+          lng: 154.021072,
+        },
+        note: "This is my 8th location",
+      },
+      {
+        name: "Location 9",
+        coordinates: {
+          lat: -35.940329572,
+          lng: 139.5249979,
+        },
+        note: "This is my 9th location",
+      },
+    ],
+  },
+
+]
+
 };
 
 /*

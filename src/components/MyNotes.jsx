@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 
 
 export default function MyNotes(props) {
-  const user = stub.profile;
+  const user = stub.users[0];
 
   return (
     <Box>
