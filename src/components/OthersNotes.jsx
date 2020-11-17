@@ -6,8 +6,7 @@ import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 
 export default function OthersNotes(props) {
-  const users = stub.users.filter((item, id) => id>0);
-
+  const user = stub.users.filter((item, id) => id > 0);
 
   return (
     <Box>
@@ -23,7 +22,7 @@ export default function OthersNotes(props) {
       <Typography>
         {props.showOthersNotes ? (
           <Box>
-            {users.map((user, index) => {
+            {user.map((user, index) => {
               return (
                 <div key={index}>
                   <b>
@@ -31,7 +30,11 @@ export default function OthersNotes(props) {
                   </b>
                   {user.locations.map((l, id) => (
                     <p key={id}>
-                      {l.name}: {l.note}
+                      <Link
+                        onClick={() => props.setDefaultCenter(l.coordinates)}
+                      >
+                        {id + 1}. {l.note}
+                      </Link>
                     </p>
                   ))}
                 </div>

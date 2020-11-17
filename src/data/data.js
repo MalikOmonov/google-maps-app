@@ -9,44 +9,49 @@ export const stub = {
     locations: [
       {
         name: "Location 1",
+        user: "John Doe",
         coordinates: {
           lat: -27.470125,
           lng: 153.021072,
         },
-        note: "This is my 1st location",
+        note: "This is 1st location",
       },
       {
         name: "Location 2",
+        user: "John Doe",
         coordinates: {
           lat: -34.940329572,
           lng: 138.5249979,
         },
-        note: "This is my 2nd location",
+        note: "This is 2nd location",
       },
 
       {
         name: "Location 3",
+        user: "John Doe",
         coordinates: {
           lat: -37.808163434,
           lng: 144.957829502,
         },
-        note: "This is my 3rd location",
+        note: "This is 3rd location",
       },
       {
         name: "Location 4",
+        user: "John Doe",
         coordinates: {
           lat: -12.4499982,
           lng: 130.83333,
         },
-        note: "This is my 4th location",
+        note: "This is 4th location",
       },
       {
         name: "Location 5",
+        user: "John Doe",
         coordinates: {
           lat: -31.951329528,
           lng: 115.855329912,
         },
-        note: "This is my 5th location",
+        note: "This is 5th location",
       },
     ],
   },
@@ -60,19 +65,21 @@ export const stub = {
     locations: [
       {
         name: "Location 6",
+        user: "Bruce Lee",
         coordinates: {
-          lat: -28.470125,
-          lng: 153.021072,
+          lat: -35.2809,
+          lng: 149.1300,
         },
-        note: "This is my 6th location",
+        note: "This is 6th location",
       },
       {
         name: "Location 7",
+        user: "Bruce Lee",
         coordinates: {
-          lat: -35.940329572,
-          lng: 138.5249979,
+          lat: -32.9283,
+          lng: 151.7817,
         },
-        note: "This is my 7th location",
+        note: "This is 7th location",
       },
     ],
   },
@@ -85,19 +92,21 @@ export const stub = {
     locations: [
       {
         name: "Location 8",
+        user: "Chuck Norris",
         coordinates: {
-          lat: -28.470125,
-          lng: 154.021072,
+          lat: -28.0167,
+          lng: 153.4000,
         },
-        note: "This is my 8th location",
+        note: "This is 8th location",
       },
       {
         name: "Location 9",
+        user: "Chuck Norris",
         coordinates: {
-          lat: -35.940329572,
-          lng: 139.5249979,
+          lat: -33.3208,
+          lng: 151.2336,
         },
-        note: "This is my 9th location",
+        note: "This is 9th location",
       },
     ],
   },

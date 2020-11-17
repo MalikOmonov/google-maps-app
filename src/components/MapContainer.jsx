@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import {
   GoogleMap,
   LoadScript,
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
+import Box from "@material-ui/core/Box";
 import { stub } from "../data/data";
 
 export default function MapContainer(props) {
-  const user = stub.users[0];
+  const user = stub.users;
 
   const mapStyles = {
     height: "100vh",
@@ -21,8 +22,6 @@ export default function MapContainer(props) {
     setSelected(item);
   };
 
-  //functional google maps https://medium.com/@allynak/how-to-use-google-map-api-in-react-app-edb59f64ac9d
-
   return (
     <LoadScript googleMapsApiKey="AIzaSyBLVHqBpK4pTUHkxRLctTj6a3nHrt1d-uI">
       <GoogleMap
@@ -30,7 +29,6 @@ export default function MapContainer(props) {
         zoom={13}
         center={props.defaultCenter}
       >
-
         {props.currentPosition.lat && (
           <Marker position={props.currentPosition}>
             <InfoWindow position={props.currentPosition}>
@@ -39,16 +37,21 @@ export default function MapContainer(props) {
           </Marker>
         )}
 
-        {user.locations.map((item) => {
+        {user.map((user, index) => {
           return (
-            <Marker
-              key={item.name}
-              position={item.coordinates}
-              title={item.name}
-              onClick={() => onSelect(item)}
-            />
+            <Box key={index}>
+              {user.locations.map((item, id) => (
+                <Marker
+                  key={id}
+                  position={item.coordinates}
+                  title={item.name}
+                  onClick={() => onSelect(item)}
+                />
+              ))}
+            </Box>
           );
         })}
+
         {selected.coordinates && (
           <InfoWindow
             position={selected.coordinates}
@@ -56,14 +59,10 @@ export default function MapContainer(props) {
             onCloseClick={() => setSelected({})}
           >
             <p>
-              <b>
-                {user.firstName} {user.secondName}
-              </b>
-              : {selected.note}
+              <b>{selected.user}</b>: {selected.note}
             </p>
           </InfoWindow>
         )}
-
       </GoogleMap>
     </LoadScript>
   );

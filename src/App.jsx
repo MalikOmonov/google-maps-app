@@ -120,6 +120,18 @@ export default function App(props) {
 
           <Grid item xs={12}>
             <Paper className={classes.paper} elevation={3}>
+              <p>
+                <b>Info notes: </b>
+              </p>
+              <p>1.Hover the mouse pointer to see the name of the marker </p>
+              <p></p>
+              <p>2. Click the marker to check notes</p>
+              <p>3. Dynamic search is implemented in the Search bar</p>
+            </Paper>
+          </Grid>
+
+          <Grid item xs={12}>
+            <Paper className={classes.paper} elevation={3}>
               <SearchBar />
             </Paper>
           </Grid>
