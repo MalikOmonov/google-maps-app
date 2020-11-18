@@ -2,19 +2,10 @@ import React, { useState } from "react";
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import { stub } from "../data/data";
-import Paper from "@material-ui/core/Paper";
-import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: theme.spacing(1),
-    margin: "20px",
-  },
-}));
-
 export default function SearchBar(props) {
-  const classes = useStyles();
+
   const user = stub.users;
   const [result, setResult] = useState("");
   const [showSearchBar, setShowSearchBar] = useState(false);
