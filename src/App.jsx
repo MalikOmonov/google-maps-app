@@ -9,6 +9,7 @@ import OthersNotes from "./components/OthersNotes";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import NewNote from "./components/NewNote";
+import { Typography } from "@material-ui/core";
 
 /*TODOS:
 - Save a new note as a new element of user.location array (redux) 
@@ -71,68 +72,75 @@ export default function App(props) {
     <Box className={classes.root}>
       <Grid container className={classes.boxCenterElement}>
         <Grid item xs={12} sm={3}>
-          <Grid item xs={12}>
-            <Paper className={classes.paper} elevation={3}>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={() => {
-                  navigator.geolocation.getCurrentPosition(success);
-                  setShowNoteDialog(true);
-                }}
-              >
-                {" "}
-                Find my current location
-              </Button>
-            </Paper>
-          </Grid>
-
-          {showNoteDialog ? (
+          <Paper className={classes.paper} elevation={3}>
             <Grid item xs={12}>
-              <Paper className={classes.paper} elevation={3}>
-                <NewNote
-                  setMyNote={setMyNote}
-                  setShowNoteDialog={setShowNoteDialog}
-                />
-              </Paper>
+              <Typography variant="h5">Main Menu</Typography>
             </Grid>
-          ) : null}
 
-          <Grid item xs={12}>
-            <Paper className={classes.paper} elevation={3}>
-              <MyNotes
-                showMyNotes={showMyNotes}
-                setShowMyNotes={setShowMyNotes}
-                setDefaultCenter={setDefaultCenter}
-              />
-            </Paper>
-          </Grid>
+            <Grid item xs={12}>
+              <Box className={classes.paper}>
+                <Button
+                  fullWidth={true}
+                  variant="contained"
+                  color="primary"
+                  onClick={() => {
+                    navigator.geolocation.getCurrentPosition(success);
+                    setShowNoteDialog(true);
+                  }}
+                >
+                  {" "}
+                  Find my current location
+                </Button>
+              </Box>
+            </Grid>
 
-          <Grid item xs={12}>
-            <Paper className={classes.paper} elevation={3}>
-              <OthersNotes
-                showOthersNotes={showOthersNotes}
-                setShowOthersNotes={setShowOthersNotes}
-                setDefaultCenter={setDefaultCenter}
-              />
-            </Paper>
-          </Grid>
+            {showNoteDialog ? (
+              <Grid item xs={12}>
+                <Paper className={classes.paper} elevation={3}>
+                  <NewNote
+                    setMyNote={setMyNote}
+                    setShowNoteDialog={setShowNoteDialog}
+                  />
+                </Paper>
+              </Grid>
+            ) : null}
+
+            <Grid item xs={12}>
+              <Box className={classes.paper}>
+                <MyNotes
+                  showMyNotes={showMyNotes}
+                  setShowMyNotes={setShowMyNotes}
+                  setDefaultCenter={setDefaultCenter}
+                />
+              </Box>
+            </Grid>
+
+            <Grid item xs={12}>
+              <Box className={classes.paper}>
+                <OthersNotes
+                  showOthersNotes={showOthersNotes}
+                  setShowOthersNotes={setShowOthersNotes}
+                  setDefaultCenter={setDefaultCenter}
+                />
+              </Box>
+            </Grid>
+
+            <Grid item xs={12}>
+              <Box className={classes.paper}>
+                <SearchBar />
+              </Box>
+            </Grid>
+          </Paper>
 
           <Grid item xs={12}>
             <Paper className={classes.paper} elevation={3}>
               <p>
-                <b>Info notes: </b>
+                <b>The developer's notes: </b>
               </p>
               <p>1.Hover the mouse pointer to see the name of the marker </p>
               <p></p>
               <p>2. Click the marker to check notes</p>
               <p>3. Dynamic search is implemented in the Search bar</p>
-            </Paper>
-          </Grid>
-
-          <Grid item xs={12}>
-            <Paper className={classes.paper} elevation={3}>
-              <SearchBar />
             </Paper>
           </Grid>
         </Grid>

@@ -2,12 +2,22 @@ import React, { useState } from "react";
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import { stub } from "../data/data";
+import Paper from "@material-ui/core/Paper";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 
-//TODO: setup flex for grid
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    padding: theme.spacing(1),
+    margin: "20px",
+  },
+}));
 
 export default function SearchBar(props) {
+  const classes = useStyles();
   const user = stub.users;
   const [result, setResult] = useState("");
+  const [showSearchBar, setShowSearchBar] = useState(false);
 
   function searchFunction(str) {
     let arr = [];
@@ -16,7 +26,7 @@ export default function SearchBar(props) {
       for (let j = 0; j < user[i].locations.length; j++) {
         let userName = user[i].locations[j].user.toLowerCase();
         let userNote = user[i].locations[j].note.toLowerCase();
-        if (userName.includes(str.toLowerCase()) && !(arr.includes(userName)) )
+        if (userName.includes(str.toLowerCase()) && !arr.includes(userName))
           arr.push(user[i].locations[j].user);
         if (userNote.includes(str.toLowerCase()))
           arr.push(user[i].locations[j].note);
@@ -36,12 +46,28 @@ export default function SearchBar(props) {
 
   return (
     <Box>
-      <TextField
-        placeholder="Enter text to search"
-        variant="outlined"
-        onChange={(e) => setResult(e.target.value)}
-      />
-      <Box>{resultList(searchFunction(result))}</Box>
+      <Button
+        fullWidth={true}
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          setShowSearchBar(!showSearchBar);
+        }}
+      >
+        {" "}
+        Searh a user or a note
+      </Button>
+      {showSearchBar ? (
+        <TextField
+          fullWidth={true}
+          placeholder="Enter a note text or user name "
+          variant="outlined"
+          onChange={(e) => setResult(e.target.value)}
+        />
+      ) : null}
+      <Box>
+          {resultList(searchFunction(result))}
+      </Box>
     </Box>
   );
 }
