@@ -71,7 +71,7 @@ export default function App(props) {
   return (
     <Box className={classes.root}>
       <Grid container className={classes.boxCenterElement}>
-        <Grid item xs={12} sm={3}>
+        <Grid item xs={12} md={3}>
           <Paper className={classes.paper} elevation={3}>
             <Grid item xs={12}>
               <Typography variant="h5">My Community Landmark</Typography>
