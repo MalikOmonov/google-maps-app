@@ -12,6 +12,12 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     margin: "20px",
   },
+  link: {
+    "&:hover": {
+      color: "#ed1212",
+      cursor: "pointer",
+    },
+  },
 }));
 
 export default function MyNotes(props) {
@@ -38,6 +44,7 @@ export default function MyNotes(props) {
                 return (
                   <p>
                     <Link
+                      className={classes.link}
                       key={index}
                       onClick={() => props.setDefaultCenter(obj.coordinates)}
                     >

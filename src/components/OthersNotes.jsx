@@ -12,6 +12,12 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     margin: "20px",
   },
+  link: {
+    "&:hover": {
+      color: "#ed1212",
+      cursor: "pointer",
+    },
+  },
 }));
 
 export default function OthersNotes(props) {
@@ -42,7 +48,7 @@ export default function OthersNotes(props) {
                     </b>
                     {user.locations.map((l, id) => (
                       <p key={id}>
-                        <Link
+                        <Link className={classes.link} 
                           onClick={() => props.setDefaultCenter(l.coordinates)}
                         >
                           {id + 1}. <b>{l.name}</b>: {l.note}
