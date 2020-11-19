@@ -41,7 +41,7 @@ export default function MyNotes(props) {
                       key={index}
                       onClick={() => props.setDefaultCenter(obj.coordinates)}
                     >
-                      {index + 1}. {obj.note}
+                      {index + 1}. <b>{obj.name}</b>: {obj.note}
                     </Link>
                   </p>
                 );

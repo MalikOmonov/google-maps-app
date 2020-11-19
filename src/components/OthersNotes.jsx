@@ -45,7 +45,7 @@ export default function OthersNotes(props) {
                         <Link
                           onClick={() => props.setDefaultCenter(l.coordinates)}
                         >
-                          {id + 1}. {l.note}
+                          {id + 1}. <b>{l.name}</b>: {l.note}
                         </Link>
                       </p>
                     ))}
