@@ -74,7 +74,7 @@ export default function App(props) {
         <Grid item xs={12} sm={3}>
           <Paper className={classes.paper} elevation={3}>
             <Grid item xs={12}>
-              <Typography variant="h5">Main Menu</Typography>
+              <Typography variant="h5">My Community Landmark</Typography>
             </Grid>
 
             <Grid item xs={12}>
@@ -135,7 +135,7 @@ export default function App(props) {
           <Grid item xs={12}>
             <Paper className={classes.paper} elevation={3}>
               <p>
-                <b>The developer's notes: </b>
+                <b>Developer's notes: </b>
               </p>
               <p>1.Hover the mouse pointer to see the name of the marker </p>
               <p></p>
